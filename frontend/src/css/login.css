@@ -1,0 +1,22 @@
+.login-div {
+    margin-top: 10%;
+    padding: 10px;
+    border-radius: 12px;
+    border: 0.4px solid grey;
+    height: 380px;
+    padding-top: 59px;
+}
+
+.header-title {
+    font-weight: 500;
+    font-size: 18pt;
+}
+
+.signup-div {
+    margin-top: 10%;
+    padding: 10px;
+    border-radius: 12px;
+    border: 0.4px solid grey;
+    height: 550px;
+    padding-top: 8px;
+}

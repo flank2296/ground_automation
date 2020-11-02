@@ -1,5 +1,6 @@
 // Add methods for api calls using axios here
 import $ from 'jquery';
+import {getCookie} from './cookie';
 
 const csrfSafeMethod = (method) => {
     return /^(GET|HEAD|OPTIONS|TRACE)$/.test(method);
@@ -13,10 +14,10 @@ const sameOrigin = (url) => {
     // Allow absolute or scheme relative URLs to same origin
 
     return (
-        url == origin ||
-        url.slice(0, origin.length + 1) == origin + '/' ||
-        url == sr_origin ||
-        url.slice(0, sr_origin.length + 1) == sr_origin + '/' ||
+        url === origin ||
+        url.slice(0, origin.length + 1) === origin + '/' ||
+        url === sr_origin ||
+        url.slice(0, sr_origin.length + 1) === sr_origin + '/' ||
         // or any other URL that isn't scheme relative or absolute i.e relative.
         !/^(\/\/|http:|https:).*/.test(url)
     );
@@ -28,7 +29,8 @@ $.ajaxSetup({
             // Send the token to same-origin, relative URLs only.
             // Send the token only if the method warrants CSRF protection
             // Using the CSRFToken value acquired earlier
-            xhr.setRequestHeader('X-CSRFToken', document.getElementById('csrfmiddlewaretoken').value);
+            let token = getCookie('csrftoken');
+            xhr.setRequestHeader('X-CSRFToken', token);
         }
     }
 });
