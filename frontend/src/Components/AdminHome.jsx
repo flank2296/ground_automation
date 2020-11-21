@@ -8,11 +8,9 @@ import AddEditGround from "./AddEditGround";
 import { Button } from "react-bootstrap";
 import { saveLocalStorage } from "../utils/utils";
 import QRReader from "./ReadQr";
+import AdminBooking from "./AdminBooking";
 
 class AdminHomeComponent extends React.Component {
-  componentDidMount() {
-    // updateRawData({selectedOption: null});
-  }
 
   render() {
     let { selectedOption } = this.props;
@@ -24,25 +22,25 @@ class AdminHomeComponent extends React.Component {
               let { src, id, label } = key;
               return (
                 <Col
-                  sm={6}
+                  sm={4}
                   onClick={() => {
                     updateRawData({ selectedOption: id });
                     saveLocalStorage({ selectedOption: id });
                   }}
+                  style={{textAlign: "center", marginTop: '20%'}}
                 >
-                  <img src={src} />
-                  <p> {label} </p>
+                  <span dangerouslySetInnerHTML={{__html: src}} />
+                  <p style={{textAlign: "center", marginTop:"2%"}}><b> {label} </b></p>
                 </Col>
               );
             })}
           </Row>
         )}
-        {selectedOption != null && (
+        {selectedOption == 0 && (
           <Container>
             <Row>
               <Col
-                sm="12"
-                xs="12"
+                sm={12}
                 style={{ width: "-webkit-fill-available" }}
                 className="mobile-box"
               >
@@ -53,18 +51,29 @@ class AdminHomeComponent extends React.Component {
             </Row>
           </Container>
         )}
+        {selectedOption == 1 && (
+          <Container>
+          <Row>
+            <Col
+              sm={12}
+              style={{ width: "-webkit-fill-available" }}
+              className="mobile-box"
+            >
+              <div className="boxed centered" style={{height: "700px", width: "1000px", marginLeft: '5%'}}>
+                {selectedOption == 1 && <AdminBooking />}
+              </div>
+            </Col>
+          </Row>
+        </Container>
+        )}
         {selectedOption == 2 && (
           <Container>
             <Row>
               <Col
-                sm="12"
-                xs="12"
+                sm={12}
                 style={{ width: "-webkit-fill-available" }}
-                className="mobile-box"
               >
-                <div className="boxed centered">
                   <QRReader />
-                </div>
               </Col>
             </Row>
           </Container>

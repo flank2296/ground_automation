@@ -269,3 +269,13 @@
     font-size: 10pt;
     color: #525252;
   }
+
+  .qr-header-text {
+      margin-top: 5%;
+  }
+
+  .scan-success {
+    text-align: center;
+    margin-top: 5%;
+    font-size: 17pt;
+  }

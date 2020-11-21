@@ -9,9 +9,17 @@ class groundSerializers(serializers.ModelSerializer):
 
 
 class bookingsSerializers(serializers.ModelSerializer):
+    ground = serializers.SerializerMethodField()
+    user = serializers.SerializerMethodField()
     class Meta:
         model = bookings
         fields = '__all__'
+    
+    def get_ground(self, instance):
+        return instance.ground.name
+    
+    def get_user(self, instance):
+        return instance.user.username
 
 
 
@@ -20,7 +28,7 @@ class custombookingsSerializers(serializers.ModelSerializer):
     ground = serializers.SerializerMethodField()
     class Meta:
         model = bookings
-        fields = ("id", "user", "ground", "start_time", "end_time")
+        fields = '__all__'
     
 
     def get_user(self, instance):

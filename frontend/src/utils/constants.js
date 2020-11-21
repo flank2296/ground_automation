@@ -36,17 +36,17 @@ export const adminOptions = [
     {
         id: 0,
         label: 'Add Edit Ground',
-        src: 'https://maverickturf.com/extra-images/Landscaping_Grass_Bangalore.jpg'
+        src: '<i class="fa fa-pencil-square-o fa-5x" aria-hidden="true"></i>'
     },
     {
         id: 1,
         label: 'Bookings',
-        src: 'https://maverickturf.com/extra-images/Landscaping_Grass_Bangalore.jpg'
+        src: '<i class="fa fa-list fa-5x" aria-hidden="true"></i>'
     },
     {
         id: 2,
         label: 'Start A Slot',
-        src: 'https://maverickturf.com/extra-images/Landscaping_Grass_Bangalore.jpg'
+        src: '<i class="fa fa-hourglass-start fa-5x" aria-hidden="true"></i>'
     }
 ]
 
@@ -55,11 +55,11 @@ export const userOption = [
     {
         id: 0,
         label: 'Book a ground',
-        src: 'https://maverickturf.com/extra-images/Landscaping_Grass_Bangalore.jpg'
+        src: '<i class="fa fa-plus-circle fa-5x"></i>'
     },
     {
         id: 1,
         label: 'Your bookings',
-        src: 'https://maverickturf.com/extra-images/Landscaping_Grass_Bangalore.jpg'
+        src: '<i class="fa fa-list fa-5x" aria-hidden="true"></i>'
     }
 ]

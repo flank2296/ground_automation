@@ -3,11 +3,12 @@ import { connect } from "react-redux";
 import { Navbar, Nav } from "react-bootstrap";
 import { clearRawData, updateRawData } from "../redux/actions";
 import {logout} from '../services';
-import { clearLocalStorage } from "../utils/utils";
+import { clearLocalStorage, updateReduxLocalStorage } from "../utils/utils";
 
 class NavigationBar extends React.Component {
   onNavHandler = (id) => {
     updateRawData({ currentUrl: id });
+    updateReduxLocalStorage({selectedOption: null})
   };
 
   logoutUser = () => {
@@ -30,7 +31,7 @@ class NavigationBar extends React.Component {
           >
             Home
           </Nav.Link>
-          <Nav.Link
+          {/* <Nav.Link
             id="Features"
             active={currentUrl === "Features"}
             onClick={() => this.onNavHandler("Features")}
@@ -43,7 +44,7 @@ class NavigationBar extends React.Component {
             onClick={() => this.onNavHandler("Pricing")}
           >
             Pricing
-          </Nav.Link>
+          </Nav.Link> */}
         </Nav>
         {!isLoggedIn && (
           <Nav style={{ float: "right" }}>

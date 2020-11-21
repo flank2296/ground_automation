@@ -21,7 +21,7 @@ class Entry extends React.Component {
 
     if(!isLoggedIn)
       return <HomePage/>
-    return session.is_staff? <AdminHome/> : <HomePage/>
+    return session.is_staff? <AdminHome/> : <UserHome/>
   }
 
   render() {

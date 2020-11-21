@@ -117,10 +117,13 @@ def start_slot(request):
             raise Exception("Invalid payload")    
 
         booking = bookings.get_booking(booking_id)
+        booking.status = 1
+        booking.save()
+
         ground = booking.ground
         ground.is_active = True
         ground.save()
-        return JsonResponse(custombookingsSerializers(booking), safe=False)
+        return JsonResponse(custombookingsSerializers(bookings.get_booking(booking_id)).data, safe=False)
     except Exception as e:
         return HttpResponseForbidden(e)
 
@@ -163,3 +166,34 @@ def fetch_ground_bookings(request):
     except Exception as e:
         print(e)
         return HttpResponseForbidden(e)
+    
+
+@require_GET
+@login_required
+def get_user_bookings(request):
+    ''' Used for fetching all booking of a user '''
+    try:
+        user = request.user
+        _bookings = bookingsSerializers(bookings.get_user_bookings(email=user.email), many=True)
+        return JsonResponse(_bookings.data, safe=False)
+    except Exception as e:
+        print(e)
+        return HttpResponseForbidden(e)
+
+
+@require_GET
+@login_required
+def get_all_bookings(request):
+    ''' Used for fetching all booking of a user '''
+    try:
+        _bookings = bookingsSerializers(bookings.get_all_bookings(), many=True)
+        return JsonResponse(_bookings.data, safe=False)
+    except Exception as e:
+        print(e)
+        return HttpResponseForbidden(e)
+
+
+def test(request):
+    return JsonResponse({
+        "name": "Amrut"
+    })

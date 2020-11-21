@@ -14,4 +14,7 @@ urlpatterns = [
     url(r'^add_edit_ground/', add_edit_ground),
     url(r'^fetch_user_grounds/', fetch_user_grounds),
     url(r'^fetch_ground_bookings/', fetch_ground_bookings),
+    url(r'^get_user_bookings/', get_user_bookings),
+    url(r'^get_all_bookings/', get_all_bookings),
+    url(r'^test/', test),
 ]

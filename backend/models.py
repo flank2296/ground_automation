@@ -52,16 +52,30 @@ class bookings(BaseModel):
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     is_approved = models.IntegerField(default=0)
+    status = models.IntegerField(default=0)  # 0 = booked, 1 = Started, 2 = Completed
 
     class Meta:
         db_table = 'bookings'
 
     @classmethod
-    def get_ground(cls, id):
+    def get_booking(cls, id):
         try:
             return cls.objects.get(id=id)
         except:
             raise Exception("Invalid Ground Id")
+    
+    @classmethod
+    def get_user_bookings(cls, email):
+        try:
+            print (email)
+            return cls.objects.filter(user__email=email)
+        except Exception as e:
+            print(e)
+            return []
+
+    @classmethod
+    def get_all_bookings(cls):
+        return cls.objects.all()
 
     @classmethod
     def get_all_booking(cls, id, start_date, end_date):

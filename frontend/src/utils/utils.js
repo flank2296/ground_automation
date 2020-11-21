@@ -183,3 +183,25 @@ export const prepareExtendedSlots = (slots) => {
 export const convertToUtc = (date) => {
   return moment(date, "DD-MM-YYYY hh:mm a").utc().toISOString();
 }
+
+export const sortBookings = (bookings) => {
+  if(!bookings.length)
+    return []
+
+  let completed = [];
+  let pending = [];
+  let started = [];
+
+  bookings.forEach(booking => {
+    if(booking.status == 0){
+      pending.push(booking);
+    }
+    else if(booking.status == 1){
+      started.push(booking)
+    }
+    else if(booking.status == 2){
+      completed.push(booking)
+    }
+  })
+  return [...started, ...pending, ...completed];
+}

@@ -1,6 +1,6 @@
 import { updateRawData } from "./redux/actions";
 import { doGet, doPost } from "./utils/requests";
-import { showAlert, updateReduxLocalStorage } from "./utils/utils";
+import { showAlert, sortBookings, updateReduxLocalStorage } from "./utils/utils";
 
 const defaultCallback = (callback, response, message, isSuccess=true) => {
   if (callback)
@@ -111,5 +111,26 @@ export const startSlot = (payload, success) => {
     },
     (res) => defaultCallback(null, res, "Unable to book a ground. Please try again later!", false)
   )
+}
 
+export const getUserBookings = (success) => {
+   doGet(
+    'api/get_user_bookings',
+    (res) => {
+      let bookings = sortBookings(res);
+      success(bookings);
+    },
+    (res) => defaultCallback(null, res, "Unable to fetch grounds", false)
+  )
+}
+
+export const getAllBookings = (success) => {
+  doGet(
+    'api/get_all_bookings',
+    (res) => {
+      let bookings = sortBookings(res);
+      success(bookings);
+    },
+    (res) => defaultCallback(null, res, "Unable to fetch grounds", false)
+  )
 }
