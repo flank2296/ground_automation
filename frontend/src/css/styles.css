@@ -1,0 +1,281 @@
+.radio{
+    transform: scale(1.4);
+    margin-left: 20% !important;
+}
+
+.font-grey{
+    color: grey;
+}
+
+.main-content-div {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 420px);
+    overflow-x: scroll
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.centered{
+    text-align: center;
+}
+
+.form-label {
+    text-align: left !important;
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+.form-component {
+    margin-top: -15px;
+}
+
+.error-input {
+    border: 1px solid red !important;
+}
+
+.valid-input {
+    border: none !important;
+}
+
+.btn-next {
+    margin-top: 5%;
+}
+
+.btn-resend {
+    background-color: lightgrey;
+}
+
+.department-div {
+    margin-top: 5px;
+}
+
+.department-text-header {
+    margin-top: 30px;
+}
+
+.department-checkbox {
+    margin-right: 5px !important;
+}
+
+.otp-btn-div {
+    text-align: center;
+}
+
+.loader-div {
+    margin-top: 10%;
+    z-index: 1000;
+    position: absolute;
+    margin-left: 5%;
+}
+
+.intro-title-div {
+    flex: 1;
+    text-align: left;
+}
+
+.intro-title {
+    margin-bottom: 2px;
+    font-size: 15pt;
+}
+
+.intro-subtitle {
+    color: grey;
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+.intro-header {
+    text-align: left;
+    font-size: 20pt;
+    margin-left: 17px;
+    margin-bottom: 20px;
+}
+
+.intro-header-foot {
+    text-align: center;
+    font-size: 20pt;
+    margin-left: 17px;
+    margin-bottom: 20px;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    background: #c3cfd9;
+    margin-bottom: 10px;
+}
+ 
+.step{
+    padding: 15% 0;
+    font-size: 20pt;
+    color: black;
+}
+
+.step-text {
+    font-size: 16px;
+    color: black;
+    font-weight: bold
+}
+
+.intro-div-row {
+    text-align: -webkit-center;
+}
+
+.patient-footer {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.number-div {
+    margin-top: -14px;
+}
+
+.error-label-text {
+    color: red;
+    font-size: 12px;
+}
+
+/* @media (min-width: 769px) { */
+    .boxed {
+        border: 1px solid #dad2d2;
+        width: 64%;
+        margin-left: 18%;
+        margin-top: 2%;
+        background-color: white;
+        padding: 2%;
+        height: 1000px;
+    }
+
+    .header-text {
+        text-align: center !important;
+        font-size: 20pt;
+        font-weight: bold;
+    }
+
+    .btn-verify {
+        margin: 5px 5px;
+        width: auto;
+    }
+
+    .btn-width-lg {
+        width: 130px;
+    }
+
+    .component-common {
+        margin: 0 14%;
+        text-align: left !important;
+        height: auto;
+    }
+
+    .box-header-creation {
+        margin-top: 3%;
+        margin-left: 18%;
+        text-align: center;
+        width: 64%;
+        display: flex;
+    }
+
+    .intro-row {
+        display: flex;
+        height: 70px;
+        padding-left: 20px;
+        max-width: 100%;
+    }
+
+    .intro-flex {
+        flex: 0.12;
+    }
+  /* } */
+
+/* @media only screen and (max-width: 768px) {
+    .boxed {
+        margin-top: 2%;
+        background-color: white;
+        padding: 2%;
+        height: 700px;
+    }
+
+    .get-started {
+        margin-top: 25%;
+    }
+    
+    .header-text {
+        text-align: center !important;
+        font-size: 14pt;
+        font-weight: bold;
+    }
+    
+    .btn-verify {
+        margin: 5px 5px;
+        width: 60%;
+    }
+
+    .component-common {
+        text-align: left !important;
+        height: auto;
+        margin: 0 10px;
+    }
+
+    .mobile-button {
+        margin-bottom: 80px !important;
+    }
+
+    .mobile-box {
+        padding: 0;
+    }
+
+    .box-header-creation {
+        margin-top: 3%;
+        text-align: center;
+        display: flex;
+    }
+
+    .mobile-div-flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row; 
+    }
+
+    .intro-row {
+        display: flex;
+        height: 100px;
+        padding-left: 20px;
+        max-width: 100%;
+    }
+
+    .intro-flex {
+        flex: 0.3;
+    }
+  } */
+
+  .inline {
+      display: inline-block;
+  }
+
+  .calender-custom {
+    height: 40px;
+    width: 276%;
+    height: 38px;
+    border: 1px solid #e5e5e5;
+  }
+
+  .qr-note {
+    font-size: 10pt;
+    color: #525252;
+  }
+
+  .qr-header-text {
+      margin-top: 5%;
+  }
+
+  .scan-success {
+    text-align: center;
+    margin-top: 5%;
+    font-size: 17pt;
+  }

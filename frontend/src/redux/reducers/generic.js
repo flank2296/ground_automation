@@ -1,9 +1,3 @@
-import {
-    DELETE_RAW_VALUE,
-    CLEAR_RAW_VALUE,
-    CLEAR_RAW_VALUE_EXCEPT_KEYS
-} from '../actions/index';
-
 const rowInitialValue = {
     toastId: null
 };
