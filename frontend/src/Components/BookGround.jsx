@@ -113,8 +113,8 @@ class BookGround extends React.Component {
       res["start_time"] = moment(start_time).format("DD-MM-YYYY hh:mm a");
       res["end_time"] = moment(end_time).format("DD-MM-YYYY hh:mm a");
       let str = JSON.stringify(res, null, 2);
-      const encryptedString = cryptr.encrypt(str);
-      QRCode.toDataURL(encryptedString)
+      // const encryptedString = cryptr.encrypt(str);
+      QRCode.toDataURL(str)
         .then((url) => {
           this.setState({ base64_url: url });
         })
@@ -279,7 +279,7 @@ class BookGround extends React.Component {
         )}
         {!base64_url && (
           <React.Fragment>
-            <FormHeader headerText="Book a ground" className="inline" />
+            <FormHeader headerText="Book a ground" className="inline ml-100" />
             <div style={{ marginBottom: "10px", marginTop: "10px" }}>
               {Object.keys(componentPropsMapper).map((_component) => {
                 if (componentPropsMapper[_component].condition) {
