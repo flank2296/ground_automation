@@ -17,8 +17,9 @@ export default class QRReader extends Component {
 
   handleScan = (data) => {
     if (data) {
-      const decryptedString = cryptr.decrypt(data);
-      let _data = JSON.parse(decryptedString);
+      // const decryptedString = cryptr.decrypt(data);
+      // let _data = JSON.parse(decryptedString);
+      let _data = JSON.parse(data);
 
       if(
         moment(_data.start_time, "DD-MM-YYYY hh:mm a").diff(moment(), "minutes") >= 60 ||

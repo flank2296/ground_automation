@@ -325,7 +325,7 @@ class AddEditGround extends React.Component {
         } className="inline">
           Back
         </Button>
-        <FormHeader headerText="Add/Edit Ground" className="inline"/>
+        <FormHeader headerText="Add/Edit Ground" className="inline ml-100"/>
         <div style={{ marginBottom: "10px", marginTop: "10px" }}>
           {Object.keys(componentPropsMapper).map((_component) => {
             if (componentPropsMapper[_component].condition) {

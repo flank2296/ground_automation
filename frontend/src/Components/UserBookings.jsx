@@ -4,12 +4,14 @@ import { Button, Table } from "reactstrap";
 import { getUserBookings } from "../services";
 import { Badge } from "reactstrap";
 import moment from "moment";
+import QRCode from "qrcode";
 
 class UserBookings extends React.Component {
   state = {
     bookings: [],
     slicedBookings: [],
     paginationIndex: 0,
+    qr: null,
   };
 
   componentDidMount() {
@@ -53,16 +55,33 @@ class UserBookings extends React.Component {
     }
   };
 
+  downloadQr = (booking) => {
+    QRCode.toDataURL(JSON.stringify(booking))
+      .then((url) => {
+        this.setState({ qr: url });
+      })
+      .catch((err) => console.log(err));
+  };
+
   getTable = () => {
     let { slicedBookings } = this.state;
     return slicedBookings.map((booking) => {
       return (
         <tr>
-          <td style={{maxWidth: "100px"}}> {booking.ground} </td>
+          <td style={{ maxWidth: "100px" }}> {booking.ground} </td>
           <td> {moment(booking.start_time).format("DD-MM-YYYY")} </td>
           <td> {moment(booking.start_time).format("hh:mm a")} </td>
           <td> {moment(booking.end_time).format("hh:mm a")} </td>
           <td> {this.getStatus(booking.status)} </td>
+          <td>
+            <a
+              onClick={(e) => this.downloadQr(booking)}
+              href={this.state.qr}
+              download={`qr-${booking.id}.png`}
+            >
+              <i class="fa fa-download" aria-hidden="true"></i>
+            </a>
+          </td>
         </tr>
       );
     });
@@ -78,6 +97,7 @@ class UserBookings extends React.Component {
             <th> From </th>
             <th> To </th>
             <th> Status </th>
+            <th> QR </th>
           </tr>
           {this.getTable()}
         </Table>
