@@ -103,7 +103,7 @@ class AddEditGround extends React.Component {
     Object.keys(this.state).forEach((_state) => {
       let value = this.state[_state];
 
-      if(_state == "is_disable"){
+      if(_state == "is_disable" || _state == 'is_closed'){
         value = value? 1: 0;
       }
 
