@@ -23,11 +23,11 @@ class ground(BaseModel):
     contact = models.CharField(max_length=10)
     email = models.CharField(max_length=50)
     address = models.CharField(max_length=500)
-    is_closed = models.IntegerField(default=0)
-    is_active = models.IntegerField(default=0)
+    is_closed = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=False)
     week_day_rate = models.CharField(max_length=50, default="0.0")
     week_end_rate = models.CharField(max_length=50, default="0.0")
-    is_disable = models.IntegerField(default=0)
+    is_disable = models.BooleanField(default=False)
     slot_duration = models.IntegerField(default=60)
 
     class Meta:

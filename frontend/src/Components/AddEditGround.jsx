@@ -151,6 +151,7 @@ class AddEditGround extends React.Component {
       week_end_rate,
       invalidFields,
       is_disable,
+      is_closed
     } = this.state;
 
     const componentPropsMapper = {
@@ -303,7 +304,7 @@ class AddEditGround extends React.Component {
         label: "Is Closed?",
         props: {
           _fieldId: "is_closed",
-          value: is_disable,
+          value: is_closed,
           classNameToApply: invalidFields.includes("is_closed")
             ? "error-input"
             : "",
