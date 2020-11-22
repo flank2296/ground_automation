@@ -191,9 +191,3 @@ def get_all_bookings(request):
     except Exception as e:
         print(e)
         return HttpResponseForbidden(e)
-
-
-def test(request):
-    return JsonResponse({
-        "name": "Amrut"
-    })
