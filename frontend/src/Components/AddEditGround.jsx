@@ -27,8 +27,8 @@ class AddEditGround extends React.Component {
     week_day_rate: "",
     week_end_rate: "",
     invalidFields: [],
-    is_disable: false,
-    is_closed: false,
+    is_disable: 0,
+    is_closed: 0,
     fields: [
       "city",
       "name",
@@ -310,7 +310,7 @@ class AddEditGround extends React.Component {
             : "",
           _style: { display: "inline-block", marginLeft: "20px" },
           onChangeHandler: (e) =>
-            this.setState({ is_disable: !this.state.is_closed }),
+            this.setState({ is_closed: !this.state.is_closed }),
         },
         isInline: true,
         toRender: CustomCheckBox,
